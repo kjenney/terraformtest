@@ -1,11 +1,16 @@
 module "rds_aurora" {
   source  = "terraform-aws-modules/rds-aurora/aws"
-  version = "~> 9.0"
+  version = "~> 10.0"
 
   name            = "${local.name}-aurora"
   engine          = "aurora-mysql"
   engine_version  = var.db_engine_version
-  instance_class  = var.db_instance_class
+  instances = {
+    one = {}
+    two = {
+      instance_class = var.db_instance_class
+    }
+  }
   master_username = var.db_master_username
   instances       = { 1 = {}, 2 = {} }
 
@@ -13,9 +18,9 @@ module "rds_aurora" {
   db_subnet_group_name = module.vpc.database_subnet_group_name
   subnets              = module.vpc.private_subnets
 
-  security_group_rules = {
+  security_group_ingress_rules = {
     ingress_from_vpc = {
-      cidr_blocks = [module.vpc.vpc_cidr_block]
+      cidr_ipv4 = module.vpc.vpc_cidr_block
     }
   }
 
