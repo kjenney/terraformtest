@@ -12,7 +12,6 @@ module "rds_aurora" {
     }
   }
   master_username = var.db_master_username
-  instances       = { 1 = {}, 2 = {} }
 
   vpc_id               = module.vpc.vpc_id
   db_subnet_group_name = module.vpc.database_subnet_group_name
