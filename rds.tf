@@ -3,7 +3,7 @@ module "rds_aurora" {
   version = "~> 9.0"
 
   name            = "${local.name}-aurora"
-  engine          = "aurora-postgresql"
+  engine          = "aurora-mysql"
   engine_version  = var.db_engine_version
   instance_class  = var.db_instance_class
   master_username = var.db_master_username
