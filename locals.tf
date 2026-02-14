@@ -1,5 +1,5 @@
 locals {
-  name = "${var.environment}-${var.cluster_name}"
+  name = "${var.environment}-${var.eks_cluster_name}"
 
   azs = slice(data.aws_availability_zones.available.names, 0, 3)
 
