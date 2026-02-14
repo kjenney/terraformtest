@@ -42,8 +42,8 @@ Available variables:
 |---|---|---|
 | `region` | AWS region | `us-east-1` |
 | `environment` | Environment name | `dev` |
-| `cluster_name` | Name of the EKS cluster | `my-eks-cluster` |
-| `cluster_version` | Kubernetes version | `1.31` |
+| `eks_cluster_name` | Name of the EKS cluster | `my-eks-cluster` |
+| `eks_cluster_version` | Kubernetes version | `1.31` |
 | `vpc_cidr` | CIDR block for VPC | `10.0.0.0/16` |
 | `db_engine_version` | Aurora PostgreSQL engine version | `16.6` |
 | `db_instance_class` | RDS instance class | `db.r6g.large` |
