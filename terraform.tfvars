@@ -1,7 +1,7 @@
 region              = "us-east-1"
 environment         = "dev"
 eks_cluster_name    = "my-eks-cluster"
-eks_cluster_version = "1.31"
+eks_cluster_version = "1.35-eks-3"
 vpc_cidr            = "10.0.0.0/16"
 db_engine_version   = "5.7"
 db_instance_class   = "db.r6g.large"
